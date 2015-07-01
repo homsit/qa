@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QAAPP</title>
+		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript">
+			//document.addEventListener("deviceready",onDeviceReady,false);
+
+			function enc(e)
+			{
+				if(e.keyCode == 13){
+					var 	query = encodeURIComponent(document.getElementById('q').value);
+					//alert(query);
+					//document.getElementById('q').value=query;
+					//document.mform.action="http://localhost/qa/index.php?qa=search&q="+query;
+					//document.mform.method="get";
+					//document.mform.submit(); 					
+					window.open("http://localhost/qa/index.php?qa=search&q="+query);
+				}
+			}
+		</script>
+	</head>
+    <body><center>
+			<img src="main.png" alt="image" style="width: 288px; height: 200px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;"
+				data-controltype="image">
+				<form name="mform">
+					<input name="qa" type="hidden" value="search">
+					<input id="q" name="q" type="text" onkeypress="enc(event);">
+				</form>
+    </center></body>
+</html>
